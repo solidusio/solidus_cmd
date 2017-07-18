@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 $:.push File.expand_path("../lib", __FILE__)
 require 'solidus_cmd/version'
 
@@ -20,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rubocop', '0.37.2'
+  s.add_development_dependency 'rubocop', '>= 0.38'
   s.add_development_dependency 'rubocop-rspec', '1.4.0'
   # Temporary hack until https://github.com/wycats/thor/issues/234 is fixed
   s.add_dependency 'thor', '~> 0.14'
