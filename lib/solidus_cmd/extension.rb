@@ -15,11 +15,14 @@ module SolidusCmd
     end
 
     def generate
+      template = options[:template] ? options[:template] : 'template.rb'
+
+      find_in_source_paths(template)
+
       use_prefix 'solidus_'
 
       empty_directory file_name
 
-      template = options[:template] ? options[:template] : 'template.rb'
       apply template
     end
 

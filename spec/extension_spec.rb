@@ -18,4 +18,9 @@ RSpec.describe SolidusCmd::Extension do
     expect(File.exist?("#{dir}/solidus_dummy.gemspec")).to be(true)
     expect(File.exist?("#{dir}/Gemfile")).to be(false)
   end
+
+  it 'not create extension when template path is invalid' do
+    run_extension(['dummy', '--template', '/invalid/path'])
+    expect(Dir.exist?('../tmp/solidus_dummy')).to be(false)
+  end
 end
