@@ -8,6 +8,8 @@ module SolidusCmd
     desc "builds a solidus extension"
     argument :file_name, type: :string, desc: 'rails app_path', default: '.'
 
+    class_option :template
+
     def self.source_root
       File.expand_path('../', __FILE__)
     end
@@ -17,7 +19,8 @@ module SolidusCmd
 
       empty_directory file_name
 
-      apply 'template.rb'
+      template = options[:template] ? options[:template] : 'template.rb'
+      apply template
     end
 
     no_tasks do
