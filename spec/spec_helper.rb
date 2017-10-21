@@ -1,3 +1,5 @@
+require 'support/extension_helper'
+
 if ENV["COVERAGE"]
   # Run Coverage report
   require 'simplecov'
@@ -18,10 +20,7 @@ ENV["RAILS_ENV"] ||= 'test'
 RSpec.configure do |config|
   config.color = true
   config.mock_with :rspec
-
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-  config.use_transactional_fixtures = false
+  config.include ExtensionHelper
 
   config.fail_fast = ENV['FAIL_FAST'] || false
 end
