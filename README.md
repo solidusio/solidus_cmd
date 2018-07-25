@@ -38,5 +38,4 @@ We use [RSpec](http://rspec.info) for tests. Ideally all PRs include tests!
 
 ## Contributing
 
-Solidus is an open source project and we encourage contributions. Please read
-[CONTRIBUTING.md](CONTRIBUTING.md) before contributing.
+Solidus is an open source project and we encourage contributions. 
