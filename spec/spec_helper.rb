@@ -19,9 +19,11 @@ RSpec.configure do |config|
   config.color = true
   config.mock_with :rspec
 
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  if defined?(Rails)
+    config.fixture_path = Rails.root.join('spec', 'fixtures')
+    config.use_transactional_fixtures = false
+  end
 
-  config.use_transactional_fixtures = false
 
   config.fail_fast = ENV['FAIL_FAST'] || false
 end
