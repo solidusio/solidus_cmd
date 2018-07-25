@@ -29,6 +29,7 @@ module SolidusCmd
       template 'config/locales/en.yml', "#{file_name}/config/locales/en.yml"
       template 'rspec', "#{file_name}/.rspec"
       template 'spec/spec_helper.rb.tt', "#{file_name}/spec/spec_helper.rb"
+      template 'spec/rails_helper.rb.tt', "#{file_name}/spec/rails_helper.rb"
       template 'rubocop.yml', "#{file_name}/.rubocop.yml"
       template 'travis.yml', "#{file_name}/.travis.yml"
     end
