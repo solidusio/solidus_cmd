@@ -1,11 +1,54 @@
 #!/usr/bin/env ruby
 require 'solidus_cmd'
+require 'solidus_cmd/version'
+require 'optparse'
 
-command = ARGV.first
-case command
-when 'extension'
-    ARGV.shift
+# Print help if no options are supplied
+ARGV << '--help' unless ARGV.first
+
+if ARGV.first == ('extension' || 'e')
+  ARGV.shift
+  if ARGV.first
     SolidusCmd::Extension.start
+  else
+    puts 'An extension must have a name!'
+    puts `solidus -h`
+  end
 else
-    fail "unknown command: #{command}"
+  Options = Struct.new(:name)
+
+  # Used to parse options from the command line
+  class Parser
+    def self.parse(options)
+      args = Options.new()
+
+      opt_parser = OptionParser.new do |opts|
+        opts.banner = 'Usage: solidus [[extension extension_name] | [-h] [-v]]'
+
+        opts.on('-h',
+                '--help',
+                'Prints this help') do
+          puts opts
+        end
+
+        opts.on('-v',
+                '--version',
+                "Prints the current version: #{SolidusCmd::VERSION}") do
+          puts SolidusCmd::VERSION
+        end
+      end
+
+      begin
+        opt_parser.parse!(options)
+      rescue OptionParser::InvalidOption => e
+        puts e
+        puts "Try 'solidus --help' for more information."
+        exit 1
+      end
+
+      args
+    end
+  end
+
+  Parser.parse(ARGV)
 end
