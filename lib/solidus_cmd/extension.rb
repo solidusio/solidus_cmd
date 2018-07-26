@@ -38,10 +38,6 @@ module SolidusCmd
         Thor::Util.camel_case file_name
       end
 
-      def solidus_version
-        '~> 1.0'
-      end
-
       def use_prefix(prefix)
         unless file_name =~ /^#{prefix}/
           @file_name = prefix + Thor::Util.snake_case(file_name)
