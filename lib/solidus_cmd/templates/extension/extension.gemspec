@@ -4,7 +4,7 @@ require '<%= file_name %>/version'
 
 Gem::Specification.new do |s|
   s.name        = '<%= file_name %>'
-  s.version     = <%= class_name %>::VERSION
+  s.version     = '<%= class_name %>::VERSION'
   s.summary     = 'TODO'
   s.description = 'TODO'
   s.license     = 'BSD-3-Clause'
