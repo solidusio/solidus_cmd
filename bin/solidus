@@ -6,7 +6,7 @@ require 'optparse'
 # Print help if no options are supplied
 ARGV << '--help' unless ARGV.first
 
-if ARGV.first == ('extension' || 'e')
+if ARGV.first == 'extension' || ARGV.first == 'e'
   ARGV.shift
   if ARGV.first
     SolidusCmd::Extension.start
