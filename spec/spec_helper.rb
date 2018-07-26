@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if ENV["COVERAGE"]
   # Run Coverage report
   require 'simplecov'
@@ -23,7 +25,6 @@ RSpec.configure do |config|
     config.fixture_path = Rails.root.join('spec', 'fixtures')
     config.use_transactional_fixtures = false
   end
-
 
   config.fail_fast = ENV['FAIL_FAST'] || false
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'thor'
 require 'thor/group'
 
@@ -8,7 +10,7 @@ module SolidusCmd
     desc "builds a solidus extension"
     argument :file_name, type: :string, desc: 'rails app_path', default: '.'
 
-    source_root File.expand_path('../templates/extension', __FILE__)
+    source_root File.expand_path('templates/extension', __dir__)
 
     def generate
       use_prefix 'solidus_'

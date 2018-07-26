@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe "Extension Creation" do
-  let(:ext_root) { File.expand_path('../../..', __FILE__) }
+  let(:ext_root) { File.expand_path('../..', __dir__) }
   let(:tmp_root) { "#{ext_root}/spec" }
   let(:build_dir) { "tmp" }
   let(:extension_name) { "test_extension" }
