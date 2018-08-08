@@ -22,8 +22,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'byebug'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rubocop', '>= 0.38'
-  s.add_development_dependency 'rubocop-rspec', '1.4.0'
+  s.add_development_dependency 'rubocop', '~> 0.49'
+  s.add_development_dependency 'rubocop-rspec'
+  s.add_development_dependency 'relaxed-rubocop'
   # Temporary hack until https://github.com/wycats/thor/issues/234 is fixed
   s.add_dependency 'thor', '~> 0.14'
 end
