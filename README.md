@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/solidusio/solidus/master/solidus.png)
+<img src="./logo.svg" width=350>
 
 - [solidus.io](http://solidus.io/)
 - [Documentation](https://guides.solidus.io)
@@ -8,7 +8,7 @@
 
 ## solidus_cmd
 
-solidus_cmd is a command line utility for creating extensions for the [Solidus ecommerce platform](https://github.com/solidusio/solidus). 
+solidus_cmd is a command line utility for creating extensions for the [Solidus ecommerce platform](https://github.com/solidusio/solidus).
 
 ## Getting started
 
@@ -38,4 +38,4 @@ We use [RSpec](http://rspec.info) for tests. Ideally all PRs include tests!
 
 ## Contributing
 
-Solidus is an open source project and we encourage contributions. 
+Solidus is an open source project and we encourage contributions.
